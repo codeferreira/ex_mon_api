@@ -10,6 +10,6 @@ defmodule ExMonApiWeb.TrainersController do
   defp handle_response({:ok, struct}, conn) do
     conn
     |> put_status(:created)
-    |> render("create.json", trainer: struct)
+    |> render(:create, trainer: struct)
   end
 end
