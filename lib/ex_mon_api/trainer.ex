@@ -24,6 +24,7 @@ defmodule ExMonApi.Trainer do
     |> cast(params, @required_fields)
     |> validate_required(@required_fields)
     |> validate_length(:password, min: 6)
+    |> handle_password_hash()
   end
 
   def handle_password_hash(
