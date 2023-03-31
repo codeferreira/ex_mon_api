@@ -1,5 +1,7 @@
 defmodule ExMonApiWeb.TrainersJSON do
-  def create(%{trainer: %{id: id, name: name, inserted_at: inserted_at}}) do
+  alias ExMonApi.Trainer
+
+  def create(%{trainer: %Trainer{id: id, name: name, inserted_at: inserted_at}}) do
     %{
       message: "Trainer created successfully",
       trainer: %{
