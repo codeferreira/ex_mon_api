@@ -33,10 +33,10 @@ defmodule ExMonApiWeb.TrainersController do
 
   defp handle_create({:error, _changeset, _status} = error, _conn), do: error
 
-  defp handle_status(response, right_status, wrong_status) do
+  defp handle_status(response, success_status, fail_status) do
     case response do
-      {:ok, struct} -> {:ok, struct, right_status}
-      {:error, changeset} -> {:error, changeset, wrong_status}
+      {:ok, struct} -> {:ok, struct, success_status}
+      {:error, changeset} -> {:error, changeset, fail_status}
     end
   end
 end
